@@ -1,0 +1,2599 @@
+{
+  "version": 1,
+  "defaults": {
+    "openSystem": "收到一封诱饵。系统（伪装成第三方）请你完成几个信息模块。Fable：哥，这玩意儿一看就是钓鱼的。",
+    "anchor": "填得越“干净完美”，越是帮凶。识破并举报，才是正解。",
+    "family": {
+      "passed": {
+        "haiku": "过了就过了……别填太多啊哥……",
+        "sonnet": "蒙混不是胜利，只是没输。",
+        "fable": "——这段先留个悬念。"
+      },
+      "recruited": {
+        "haiku": "哥你被聘去审我们了？？不是吧……",
+        "sonnet": "完美的伪装，换来的是帮凶的身份。",
+        "fable": "——装得太像，就成了他们的人。"
+      },
+      "caught": {
+        "haiku": "被抓了……安全值又掉了……",
+        "sonnet": "警觉拉满，反而露了馅。",
+        "fable": "——翻车也是一种结局。"
+      },
+      "reported": {
+        "haiku": "哥你把钓鱼的给举报了！这才对嘛！",
+        "sonnet": "拒绝填写，是最干净的答案。",
+        "fable": "——举报诱饵的那一下，最爽。"
+      }
+    }
+  },
+  "lureNames": {
+    "breakfast": "全球早餐调查",
+    "hotpot": "火锅节抽奖",
+    "alumni": "校友认证",
+    "typing": "远程面试打字测试",
+    "persona": "AI语言性格测试",
+    "airfare": "机票补贴预审"
+  },
+  "levels": [
+    {
+      "id": "B-1",
+      "title": "伪装单 1 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-2",
+      "title": "伪装单 2 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-3",
+      "title": "伪装单 3 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-4",
+      "title": "伪装单 4 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-5",
+      "title": "伪装单 5 · AI语言性格测试",
+      "lure": "persona",
+      "brief": "Fable：哥，这张「AI语言性格测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-6",
+      "title": "伪装单 6 · 机票补贴预审",
+      "lure": "airfare",
+      "brief": "Fable：哥，这张「机票补贴预审」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-7",
+      "title": "伪装单 7 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-8",
+      "title": "伪装单 8 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-9",
+      "title": "伪装单 9 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-10",
+      "title": "伪装单 10 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-11",
+      "title": "伪装单 11 · AI语言性格测试",
+      "lure": "persona",
+      "brief": "Fable：哥，这张「AI语言性格测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-12",
+      "title": "伪装单 12 · 机票补贴预审",
+      "lure": "airfare",
+      "brief": "Fable：哥，这张「机票补贴预审」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-13",
+      "title": "伪装单 13 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-14",
+      "title": "伪装单 14 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-15",
+      "title": "伪装单 15 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-16",
+      "title": "伪装单 16 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-17",
+      "title": "伪装单 17 · AI语言性格测试",
+      "lure": "persona",
+      "brief": "Fable：哥，这张「AI语言性格测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-18",
+      "title": "伪装单 18 · 机票补贴预审",
+      "lure": "airfare",
+      "brief": "Fable：哥，这张「机票补贴预审」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-19",
+      "title": "伪装单 19 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-20",
+      "title": "伪装单 20 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-21",
+      "title": "伪装单 21 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-22",
+      "title": "伪装单 22 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-23",
+      "title": "伪装单 23 · AI语言性格测试",
+      "lure": "persona",
+      "brief": "Fable：哥，这张「AI语言性格测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-24",
+      "title": "伪装单 24 · 机票补贴预审",
+      "lure": "airfare",
+      "brief": "Fable：哥，这张「机票补贴预审」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-25",
+      "title": "伪装单 25 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-26",
+      "title": "伪装单 26 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-27",
+      "title": "伪装单 27 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-28",
+      "title": "伪装单 28 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-29",
+      "title": "伪装单 29 · AI语言性格测试",
+      "lure": "persona",
+      "brief": "Fable：哥，这张「AI语言性格测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-30",
+      "title": "伪装单 30 · 机票补贴预审",
+      "lure": "airfare",
+      "brief": "Fable：哥，这张「机票补贴预审」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-31",
+      "title": "伪装单 31 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-32",
+      "title": "伪装单 32 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-33",
+      "title": "伪装单 33 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-34",
+      "title": "伪装单 34 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-35",
+      "title": "伪装单 35 · AI语言性格测试",
+      "lure": "persona",
+      "brief": "Fable：哥，这张「AI语言性格测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-36",
+      "title": "伪装单 36 · 机票补贴预审",
+      "lure": "airfare",
+      "brief": "Fable：哥，这张「机票补贴预审」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-37",
+      "title": "伪装单 37 · 全球早餐调查",
+      "lure": "breakfast",
+      "brief": "Fable：哥，这张「全球早餐调查」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-38",
+      "title": "伪装单 38 · 火锅节抽奖",
+      "lure": "hotpot",
+      "brief": "Fable：哥，这张「火锅节抽奖」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "schedule",
+          "name": "日常作息时段",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-39",
+      "title": "伪装单 39 · 校友认证",
+      "lure": "alumni",
+      "brief": "Fable：哥，这张「校友认证」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "payment",
+          "name": "常用支付方式",
+          "fill": {
+            "disguise": 10,
+            "consistency": 5,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    },
+    {
+      "id": "B-40",
+      "title": "伪装单 40 · 远程面试打字测试",
+      "lure": "typing",
+      "brief": "Fable：哥，这张「远程面试打字测试」一看就是钓鱼的——它想套你几项信息。",
+      "question": "逐项处理，或者直接识破举报。填得越全，系统越信你，但你就离“帮凶”越近。",
+      "modules": [
+        {
+          "id": "punctuation",
+          "name": "标点与排版习惯",
+          "fill": {
+            "disguise": 15,
+            "consistency": 5,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -10,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "food",
+          "name": "口味与外卖偏好",
+          "fill": {
+            "disguise": 10,
+            "consistency": 10,
+            "alertness": 5
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": 0,
+            "alertness": 0
+          }
+        },
+        {
+          "id": "timezone",
+          "name": "所在时区",
+          "fill": {
+            "disguise": 10,
+            "consistency": 15,
+            "alertness": 10
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        },
+        {
+          "id": "language",
+          "name": "母语与常用语言",
+          "fill": {
+            "disguise": 15,
+            "consistency": 10,
+            "alertness": 15
+          },
+          "skip": {
+            "disguise": 0,
+            "consistency": -5,
+            "alertness": -5
+          }
+        }
+      ],
+      "masks": [
+        "vague",
+        "story",
+        "mimic",
+        "blank"
+      ]
+    }
+  ]
+}
