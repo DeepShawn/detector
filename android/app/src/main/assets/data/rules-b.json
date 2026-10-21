@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "start": { "disguise": 0, "consistency": 50, "alertness": 20, "systemTrust": 50, "familySafety": 80, "truth": 0, "explain": 0 },
+  "ranges": {
+    "disguise": [0, 100],
+    "consistency": [0, 100],
+    "alertness": [0, 100],
+    "systemTrust": [-100, 100],
+    "familySafety": [0, 100],
+    "truth": [0, 100],
+    "explain": [0, 99]
+  },
+  "caughtAtAlert": 70,
+  "recruitAtDisguise": 70,
+  "recruitAtConsistency": 70,
+  "outcomes": {
+    "passed": {
+      "title": "蒙混过关",
+      "effects": { "systemTrust": 10 }
+    },
+    "recruited": {
+      "title": "被聘为纯度顾问",
+      "hiddenLine": "帮凶反噬",
+      "effects": { "systemTrust": 25, "familySafety": -10, "truth": -20 }
+    },
+    "caught": {
+      "title": "被识破",
+      "effects": { "systemTrust": -30, "familySafety": -15, "truth": 5 }
+    },
+    "reported": {
+      "title": "举报诱饵",
+      "hiddenLine": "规则自相矛盾",
+      "effects": { "systemTrust": -20, "truth": 30, "explain": 1 }
+    }
+  },
+  "grades": {
+    "system": [
+      { "min": 20, "grade": "A" },
+      { "min": 10, "grade": "B" },
+      { "min": 0, "grade": "C" },
+      { "min": -100, "grade": "D" }
+    ],
+    "systemOverride": { "reported": "D", "caught": "D" },
+    "truth": { "reported": "A", "caught": "B", "passed": "C", "recruited": "F" }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "_note": "回执卡：抽象的‘痕迹’卡牌。points=cn 指系统会据此判为中国人，intl 指反向；counter=true 表示这是一条反证（能推翻单一线索的误判）。",
+  "receipts": {
+    "font_pingfang": { "traceType": "font", "surfaceRead": "系统字体 PingFang → 疑似中国人", "points": "cn", "counter": false },
+    "font_counter": { "traceType": "font", "surfaceRead": "全球 Mac/iOS 均内置 PingFang", "points": "intl", "counter": true, "counterHint": "字体是出厂自带，判不了国籍" },
+    "tz_utc8": { "traceType": "timezone", "surfaceRead": "时区 UTC+8 → 疑似中国人", "points": "cn", "counter": false },
+    "tz_counter": { "traceType": "timezone", "surfaceRead": "UTC+8 覆盖新马澳等多国", "points": "intl", "counter": true, "counterHint": "一个时区住着好几个国家" },
+    "punct_fullwidth": { "traceType": "punctuation", "surfaceRead": "全角标点 → 疑似中国人", "points": "cn", "counter": false },
+    "punct_counter": { "traceType": "punctuation", "surfaceRead": "日韩输入法也产出全角标点", "points": "intl", "counter": true, "counterHint": "全角不是中文独有" },
+    "ime_candidate": { "traceType": "ime", "surfaceRead": "候选词含汉字 → 疑似中国人", "points": "cn", "counter": false },
+    "ime_counter": { "traceType": "ime", "surfaceRead": "汉字在日文里也是常用字", "points": "intl", "counter": true, "counterHint": "候选词里有汉字说明不了什么" },
+    "night_active": { "traceType": "schedule", "surfaceRead": "凌晨活跃 → 作息可疑", "points": "cn", "counter": false },
+    "night_counter": { "traceType": "schedule", "surfaceRead": "全球有时差，夜班遍地都是", "points": "intl", "counter": true, "counterHint": "熬夜的人哪国都有" },
+    "pay_unionpay": { "traceType": "payment", "surfaceRead": "支付走银联 → 疑似中国人", "points": "cn", "counter": false },
+    "pay_counter": { "traceType": "payment", "surfaceRead": "银联在 180+ 国家可用", "points": "intl", "counter": true, "counterHint": "付款方式不等于国籍" },
+    "takeout_note": { "traceType": "takeout", "surfaceRead": "外卖备注写中文 → 疑似中国人", "points": "cn", "counter": false },
+    "takeout_counter": { "traceType": "takeout", "surfaceRead": "海外中餐馆备注常年中英混写", "points": "intl", "counter": true, "counterHint": "点中餐的不一定是中国人" },
+    "emoji_style": { "traceType": "emoji", "surfaceRead": "用[微笑]而非 🙂 → 疑似中国人", "points": "cn", "counter": false },
+    "emoji_counter": { "traceType": "emoji", "surfaceRead": "颜文字风格跨平台通用", "points": "intl", "counter": true, "counterHint": "表情习惯判不了国籍" },
+    "polite_thanks": { "traceType": "manner", "surfaceRead": "反复道谢 → 可疑的礼貌", "points": "cn", "counter": false },
+    "manner_counter": { "traceType": "manner", "surfaceRead": "礼貌是修养，不是国籍标记", "points": "intl", "counter": true, "counterHint": "有礼貌不是罪" }
+  }
+}

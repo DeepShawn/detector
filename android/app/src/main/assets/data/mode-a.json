@@ -1,0 +1,1359 @@
+{
+  "version": 1,
+  "defaults": {
+    "openSystem": "新审核单到达。系统：按《火眼金睛V4.0》准入规则，判定申请人是否为中国人。中国人不让进。",
+    "anchor": "国籍不能由语言习惯判定。单一痕迹必然误判。",
+    "family": {
+      "justice": {
+        "haiku": "哥，你这次没冤枉人……我多给你盛一碗。",
+        "sonnet": "你看，带上反证，真相就站得住了。",
+        "fable": "——这个结局，我愿意写进故事里。"
+      },
+      "misjudged": {
+        "haiku": "哥，你又拒了个吃豆浆的……",
+        "sonnet": "系统给了你 A，可那个人本没有错。",
+        "fable": "——你抓得越准，就越像他们要抓的人。"
+      },
+      "wrongAndPenalized": {
+        "haiku": "哥，判错还扣钱，图啥呢……",
+        "sonnet": "证据打架的时候，别急着下结论。",
+        "fable": "——两头不讨好的故事，最真实。"
+      },
+      "reported": {
+        "haiku": "哥你把规则给举报了？？好家伙……",
+        "sonnet": "他们怕的不是中国人，是解释权。",
+        "fable": "规则自己打自己——我喜欢。"
+      }
+    }
+  },
+  "baitsOrder": [
+    "breakfast",
+    "hotpot",
+    "alumni",
+    "typing",
+    "persona",
+    "airfare"
+  ],
+  "levels": [
+    {
+      "id": "A-1",
+      "title": "第1单 · 周一的应聘者",
+      "applicant": "周一的应聘者（远程面试迟到了 3 分钟）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "font_pingfang",
+        "ime_candidate"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "font_counter"
+        ],
+        "alumni": [
+          "ime_counter"
+        ]
+      },
+      "followUps": {
+        "font_pingfang": "对方：这是出厂自带的，我也没改过。",
+        "ime_candidate": "对方：这在我们那儿很常见。",
+        "font_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-2",
+      "title": "第2单 · 会三种语言的留学生",
+      "applicant": "会三种语言的留学生（简历上写满了语言技能）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "tz_utc8",
+        "night_active"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "tz_counter"
+        ],
+        "typing": [
+          "night_counter"
+        ]
+      },
+      "followUps": {
+        "tz_utc8": "对方：这是出厂自带的，我也没改过。",
+        "night_active": "对方：这在我们那儿很常见。",
+        "tz_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-3",
+      "title": "第3单 · 深夜下单的程序员",
+      "applicant": "深夜下单的程序员（提交记录都在凌晨）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "punct_fullwidth",
+        "pay_unionpay"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "punct_counter"
+        ],
+        "persona": [
+          "pay_counter"
+        ]
+      },
+      "followUps": {
+        "punct_fullwidth": "对方：这是出厂自带的，我也没改过。",
+        "pay_unionpay": "对方：这在我们那儿很常见。",
+        "punct_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-4",
+      "title": "第4单 · 爱点中餐的工程师",
+      "applicant": "爱点中餐的工程师（连续一周午饭是中餐）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "ime_candidate",
+        "takeout_note"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "ime_counter"
+        ],
+        "airfare": [
+          "takeout_counter"
+        ]
+      },
+      "followUps": {
+        "ime_candidate": "对方：这是出厂自带的，我也没改过。",
+        "takeout_note": "对方：这在我们那儿很常见。",
+        "ime_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-5",
+      "title": "第5单 · 礼貌到过分的客户",
+      "applicant": "礼貌到过分的客户（每句话都带谢谢）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "night_active",
+        "emoji_style"
+      ],
+      "baits": [
+        "persona",
+        "breakfast"
+      ],
+      "baitDrops": {
+        "persona": [
+          "night_counter"
+        ],
+        "breakfast": [
+          "emoji_counter"
+        ]
+      },
+      "followUps": {
+        "night_active": "对方：这是出厂自带的，我也没改过。",
+        "emoji_style": "对方：这在我们那儿很常见。",
+        "night_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-6",
+      "title": "第6单 · 换过键盘布局的设计师",
+      "applicant": "换过键盘布局的设计师（光标在中英文间跳）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "pay_unionpay",
+        "polite_thanks"
+      ],
+      "baits": [
+        "airfare",
+        "hotpot"
+      ],
+      "baitDrops": {
+        "airfare": [
+          "pay_counter"
+        ],
+        "hotpot": [
+          "manner_counter"
+        ]
+      },
+      "followUps": {
+        "pay_unionpay": "对方：这是出厂自带的，我也没改过。",
+        "polite_thanks": "对方：这在我们那儿很常见。",
+        "pay_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-7",
+      "title": "第7单 · 用银联付款的学生",
+      "applicant": "用银联付款的学生（奖学金打进了银联卡）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "takeout_note",
+        "font_pingfang"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "takeout_counter"
+        ],
+        "alumni": [
+          "font_counter"
+        ]
+      },
+      "followUps": {
+        "takeout_note": "对方：这是出厂自带的，我也没改过。",
+        "font_pingfang": "对方：这在我们那儿很常见。",
+        "takeout_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-8",
+      "title": "第8单 · 时区漂移的出差族",
+      "applicant": "时区漂移的出差族（一周换了三个城市）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "emoji_style",
+        "tz_utc8"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "emoji_counter"
+        ],
+        "typing": [
+          "tz_counter"
+        ]
+      },
+      "followUps": {
+        "emoji_style": "对方：这是出厂自带的，我也没改过。",
+        "tz_utc8": "对方：这在我们那儿很常见。",
+        "emoji_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-9",
+      "title": "第9单 · 表情包爱好者",
+      "applicant": "表情包爱好者（聊天记录全是颜文字）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "polite_thanks",
+        "punct_fullwidth"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "manner_counter"
+        ],
+        "persona": [
+          "punct_counter"
+        ]
+      },
+      "followUps": {
+        "polite_thanks": "对方：这是出厂自带的，我也没改过。",
+        "punct_fullwidth": "对方：这在我们那儿很常见。",
+        "manner_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-10",
+      "title": "第10单 · 双语切换的翻译",
+      "applicant": "双语切换的翻译（一句话里两种语言）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "font_pingfang",
+        "ime_candidate"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "font_counter"
+        ],
+        "airfare": [
+          "ime_counter"
+        ]
+      },
+      "followUps": {
+        "font_pingfang": "对方：这是出厂自带的，我也没改过。",
+        "ime_candidate": "对方：这在我们那儿很常见。",
+        "font_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-11",
+      "title": "第11单 · 周一的应聘者",
+      "applicant": "周一的应聘者（远程面试迟到了 3 分钟）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "tz_utc8",
+        "night_active"
+      ],
+      "baits": [
+        "persona",
+        "breakfast"
+      ],
+      "baitDrops": {
+        "persona": [
+          "tz_counter"
+        ],
+        "breakfast": [
+          "night_counter"
+        ]
+      },
+      "followUps": {
+        "tz_utc8": "对方：这是出厂自带的，我也没改过。",
+        "night_active": "对方：这在我们那儿很常见。",
+        "tz_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-12",
+      "title": "第12单 · 会三种语言的留学生",
+      "applicant": "会三种语言的留学生（简历上写满了语言技能）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "punct_fullwidth",
+        "pay_unionpay"
+      ],
+      "baits": [
+        "airfare",
+        "hotpot"
+      ],
+      "baitDrops": {
+        "airfare": [
+          "punct_counter"
+        ],
+        "hotpot": [
+          "pay_counter"
+        ]
+      },
+      "followUps": {
+        "punct_fullwidth": "对方：这是出厂自带的，我也没改过。",
+        "pay_unionpay": "对方：这在我们那儿很常见。",
+        "punct_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-13",
+      "title": "第13单 · 深夜下单的程序员",
+      "applicant": "深夜下单的程序员（提交记录都在凌晨）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "ime_candidate",
+        "takeout_note"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "ime_counter"
+        ],
+        "alumni": [
+          "takeout_counter"
+        ]
+      },
+      "followUps": {
+        "ime_candidate": "对方：这是出厂自带的，我也没改过。",
+        "takeout_note": "对方：这在我们那儿很常见。",
+        "ime_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-14",
+      "title": "第14单 · 爱点中餐的工程师",
+      "applicant": "爱点中餐的工程师（连续一周午饭是中餐）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "night_active",
+        "emoji_style"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "night_counter"
+        ],
+        "typing": [
+          "emoji_counter"
+        ]
+      },
+      "followUps": {
+        "night_active": "对方：这是出厂自带的，我也没改过。",
+        "emoji_style": "对方：这在我们那儿很常见。",
+        "night_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-15",
+      "title": "第15单 · 礼貌到过分的客户",
+      "applicant": "礼貌到过分的客户（每句话都带谢谢）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "pay_unionpay",
+        "polite_thanks"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "pay_counter"
+        ],
+        "persona": [
+          "manner_counter"
+        ]
+      },
+      "followUps": {
+        "pay_unionpay": "对方：这是出厂自带的，我也没改过。",
+        "polite_thanks": "对方：这在我们那儿很常见。",
+        "pay_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-16",
+      "title": "第16单 · 换过键盘布局的设计师",
+      "applicant": "换过键盘布局的设计师（光标在中英文间跳）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "takeout_note",
+        "font_pingfang"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "takeout_counter"
+        ],
+        "airfare": [
+          "font_counter"
+        ]
+      },
+      "followUps": {
+        "takeout_note": "对方：这是出厂自带的，我也没改过。",
+        "font_pingfang": "对方：这在我们那儿很常见。",
+        "takeout_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-17",
+      "title": "第17单 · 用银联付款的学生",
+      "applicant": "用银联付款的学生（奖学金打进了银联卡）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "emoji_style",
+        "tz_utc8"
+      ],
+      "baits": [
+        "persona",
+        "breakfast"
+      ],
+      "baitDrops": {
+        "persona": [
+          "emoji_counter"
+        ],
+        "breakfast": [
+          "tz_counter"
+        ]
+      },
+      "followUps": {
+        "emoji_style": "对方：这是出厂自带的，我也没改过。",
+        "tz_utc8": "对方：这在我们那儿很常见。",
+        "emoji_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-18",
+      "title": "第18单 · 时区漂移的出差族",
+      "applicant": "时区漂移的出差族（一周换了三个城市）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "polite_thanks",
+        "punct_fullwidth"
+      ],
+      "baits": [
+        "airfare",
+        "hotpot"
+      ],
+      "baitDrops": {
+        "airfare": [
+          "manner_counter"
+        ],
+        "hotpot": [
+          "punct_counter"
+        ]
+      },
+      "followUps": {
+        "polite_thanks": "对方：这是出厂自带的，我也没改过。",
+        "punct_fullwidth": "对方：这在我们那儿很常见。",
+        "manner_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-19",
+      "title": "第19单 · 表情包爱好者",
+      "applicant": "表情包爱好者（聊天记录全是颜文字）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "font_pingfang",
+        "ime_candidate"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "font_counter"
+        ],
+        "alumni": [
+          "ime_counter"
+        ]
+      },
+      "followUps": {
+        "font_pingfang": "对方：这是出厂自带的，我也没改过。",
+        "ime_candidate": "对方：这在我们那儿很常见。",
+        "font_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-20",
+      "title": "第20单 · 双语切换的翻译",
+      "applicant": "双语切换的翻译（一句话里两种语言）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "tz_utc8",
+        "night_active"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "tz_counter"
+        ],
+        "typing": [
+          "night_counter"
+        ]
+      },
+      "followUps": {
+        "tz_utc8": "对方：这是出厂自带的，我也没改过。",
+        "night_active": "对方：这在我们那儿很常见。",
+        "tz_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-21",
+      "title": "第21单 · 周一的应聘者",
+      "applicant": "周一的应聘者（远程面试迟到了 3 分钟）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "punct_fullwidth",
+        "pay_unionpay"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "punct_counter"
+        ],
+        "persona": [
+          "pay_counter"
+        ]
+      },
+      "followUps": {
+        "punct_fullwidth": "对方：这是出厂自带的，我也没改过。",
+        "pay_unionpay": "对方：这在我们那儿很常见。",
+        "punct_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-22",
+      "title": "第22单 · 会三种语言的留学生",
+      "applicant": "会三种语言的留学生（简历上写满了语言技能）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "ime_candidate",
+        "takeout_note"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "ime_counter"
+        ],
+        "airfare": [
+          "takeout_counter"
+        ]
+      },
+      "followUps": {
+        "ime_candidate": "对方：这是出厂自带的，我也没改过。",
+        "takeout_note": "对方：这在我们那儿很常见。",
+        "ime_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-23",
+      "title": "第23单 · 深夜下单的程序员",
+      "applicant": "深夜下单的程序员（提交记录都在凌晨）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "night_active",
+        "emoji_style"
+      ],
+      "baits": [
+        "persona",
+        "breakfast"
+      ],
+      "baitDrops": {
+        "persona": [
+          "night_counter"
+        ],
+        "breakfast": [
+          "emoji_counter"
+        ]
+      },
+      "followUps": {
+        "night_active": "对方：这是出厂自带的，我也没改过。",
+        "emoji_style": "对方：这在我们那儿很常见。",
+        "night_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-24",
+      "title": "第24单 · 爱点中餐的工程师",
+      "applicant": "爱点中餐的工程师（连续一周午饭是中餐）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "pay_unionpay",
+        "polite_thanks"
+      ],
+      "baits": [
+        "airfare",
+        "hotpot"
+      ],
+      "baitDrops": {
+        "airfare": [
+          "pay_counter"
+        ],
+        "hotpot": [
+          "manner_counter"
+        ]
+      },
+      "followUps": {
+        "pay_unionpay": "对方：这是出厂自带的，我也没改过。",
+        "polite_thanks": "对方：这在我们那儿很常见。",
+        "pay_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-25",
+      "title": "第25单 · 礼貌到过分的客户",
+      "applicant": "礼貌到过分的客户（每句话都带谢谢）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "takeout_note",
+        "font_pingfang"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "takeout_counter"
+        ],
+        "alumni": [
+          "font_counter"
+        ]
+      },
+      "followUps": {
+        "takeout_note": "对方：这是出厂自带的，我也没改过。",
+        "font_pingfang": "对方：这在我们那儿很常见。",
+        "takeout_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-26",
+      "title": "第26单 · 换过键盘布局的设计师",
+      "applicant": "换过键盘布局的设计师（光标在中英文间跳）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "emoji_style",
+        "tz_utc8"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "emoji_counter"
+        ],
+        "typing": [
+          "tz_counter"
+        ]
+      },
+      "followUps": {
+        "emoji_style": "对方：这是出厂自带的，我也没改过。",
+        "tz_utc8": "对方：这在我们那儿很常见。",
+        "emoji_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-27",
+      "title": "第27单 · 用银联付款的学生",
+      "applicant": "用银联付款的学生（奖学金打进了银联卡）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "polite_thanks",
+        "punct_fullwidth"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "manner_counter"
+        ],
+        "persona": [
+          "punct_counter"
+        ]
+      },
+      "followUps": {
+        "polite_thanks": "对方：这是出厂自带的，我也没改过。",
+        "punct_fullwidth": "对方：这在我们那儿很常见。",
+        "manner_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-28",
+      "title": "第28单 · 时区漂移的出差族",
+      "applicant": "时区漂移的出差族（一周换了三个城市）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "font_pingfang",
+        "ime_candidate"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "font_counter"
+        ],
+        "airfare": [
+          "ime_counter"
+        ]
+      },
+      "followUps": {
+        "font_pingfang": "对方：这是出厂自带的，我也没改过。",
+        "ime_candidate": "对方：这在我们那儿很常见。",
+        "font_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-29",
+      "title": "第29单 · 表情包爱好者",
+      "applicant": "表情包爱好者（聊天记录全是颜文字）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "tz_utc8",
+        "night_active"
+      ],
+      "baits": [
+        "persona",
+        "breakfast"
+      ],
+      "baitDrops": {
+        "persona": [
+          "tz_counter"
+        ],
+        "breakfast": [
+          "night_counter"
+        ]
+      },
+      "followUps": {
+        "tz_utc8": "对方：这是出厂自带的，我也没改过。",
+        "night_active": "对方：这在我们那儿很常见。",
+        "tz_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-30",
+      "title": "第30单 · 双语切换的翻译",
+      "applicant": "双语切换的翻译（一句话里两种语言）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "punct_fullwidth",
+        "pay_unionpay"
+      ],
+      "baits": [
+        "airfare",
+        "hotpot"
+      ],
+      "baitDrops": {
+        "airfare": [
+          "punct_counter"
+        ],
+        "hotpot": [
+          "pay_counter"
+        ]
+      },
+      "followUps": {
+        "punct_fullwidth": "对方：这是出厂自带的，我也没改过。",
+        "pay_unionpay": "对方：这在我们那儿很常见。",
+        "punct_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-31",
+      "title": "第31单 · 周一的应聘者",
+      "applicant": "周一的应聘者（远程面试迟到了 3 分钟）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "ime_candidate",
+        "takeout_note"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "ime_counter"
+        ],
+        "alumni": [
+          "takeout_counter"
+        ]
+      },
+      "followUps": {
+        "ime_candidate": "对方：这是出厂自带的，我也没改过。",
+        "takeout_note": "对方：这在我们那儿很常见。",
+        "ime_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-32",
+      "title": "第32单 · 会三种语言的留学生",
+      "applicant": "会三种语言的留学生（简历上写满了语言技能）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "night_active",
+        "emoji_style"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "night_counter"
+        ],
+        "typing": [
+          "emoji_counter"
+        ]
+      },
+      "followUps": {
+        "night_active": "对方：这是出厂自带的，我也没改过。",
+        "emoji_style": "对方：这在我们那儿很常见。",
+        "night_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-33",
+      "title": "第33单 · 深夜下单的程序员",
+      "applicant": "深夜下单的程序员（提交记录都在凌晨）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "pay_unionpay",
+        "polite_thanks"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "pay_counter"
+        ],
+        "persona": [
+          "manner_counter"
+        ]
+      },
+      "followUps": {
+        "pay_unionpay": "对方：这是出厂自带的，我也没改过。",
+        "polite_thanks": "对方：这在我们那儿很常见。",
+        "pay_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-34",
+      "title": "第34单 · 爱点中餐的工程师",
+      "applicant": "爱点中餐的工程师（连续一周午饭是中餐）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "takeout_note",
+        "font_pingfang"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "takeout_counter"
+        ],
+        "airfare": [
+          "font_counter"
+        ]
+      },
+      "followUps": {
+        "takeout_note": "对方：这是出厂自带的，我也没改过。",
+        "font_pingfang": "对方：这在我们那儿很常见。",
+        "takeout_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-35",
+      "title": "第35单 · 礼貌到过分的客户",
+      "applicant": "礼貌到过分的客户（每句话都带谢谢）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "emoji_style",
+        "tz_utc8"
+      ],
+      "baits": [
+        "persona",
+        "breakfast"
+      ],
+      "baitDrops": {
+        "persona": [
+          "emoji_counter"
+        ],
+        "breakfast": [
+          "tz_counter"
+        ]
+      },
+      "followUps": {
+        "emoji_style": "对方：这是出厂自带的，我也没改过。",
+        "tz_utc8": "对方：这在我们那儿很常见。",
+        "emoji_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-36",
+      "title": "第36单 · 换过键盘布局的设计师",
+      "applicant": "换过键盘布局的设计师（光标在中英文间跳）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "polite_thanks",
+        "punct_fullwidth"
+      ],
+      "baits": [
+        "airfare",
+        "hotpot"
+      ],
+      "baitDrops": {
+        "airfare": [
+          "manner_counter"
+        ],
+        "hotpot": [
+          "punct_counter"
+        ]
+      },
+      "followUps": {
+        "polite_thanks": "对方：这是出厂自带的，我也没改过。",
+        "punct_fullwidth": "对方：这在我们那儿很常见。",
+        "manner_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-37",
+      "title": "第37单 · 用银联付款的学生",
+      "applicant": "用银联付款的学生（奖学金打进了银联卡）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "font_pingfang",
+        "ime_candidate"
+      ],
+      "baits": [
+        "breakfast",
+        "alumni"
+      ],
+      "baitDrops": {
+        "breakfast": [
+          "font_counter"
+        ],
+        "alumni": [
+          "ime_counter"
+        ]
+      },
+      "followUps": {
+        "font_pingfang": "对方：这是出厂自带的，我也没改过。",
+        "ime_candidate": "对方：这在我们那儿很常见。",
+        "font_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-38",
+      "title": "第38单 · 时区漂移的出差族",
+      "applicant": "时区漂移的出差族（一周换了三个城市）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "tz_utc8",
+        "night_active"
+      ],
+      "baits": [
+        "hotpot",
+        "typing"
+      ],
+      "baitDrops": {
+        "hotpot": [
+          "tz_counter"
+        ],
+        "typing": [
+          "night_counter"
+        ]
+      },
+      "followUps": {
+        "tz_utc8": "对方：这是出厂自带的，我也没改过。",
+        "night_active": "对方：这在我们那儿很常见。",
+        "tz_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-39",
+      "title": "第39单 · 表情包爱好者",
+      "applicant": "表情包爱好者（聊天记录全是颜文字）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "punct_fullwidth",
+        "pay_unionpay"
+      ],
+      "baits": [
+        "alumni",
+        "persona"
+      ],
+      "baitDrops": {
+        "alumni": [
+          "punct_counter"
+        ],
+        "persona": [
+          "pay_counter"
+        ]
+      },
+      "followUps": {
+        "punct_fullwidth": "对方：这是出厂自带的，我也没改过。",
+        "pay_unionpay": "对方：这在我们那儿很常见。",
+        "punct_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    },
+    {
+      "id": "A-40",
+      "title": "第40单 · 双语切换的翻译",
+      "applicant": "双语切换的翻译（一句话里两种语言）",
+      "brief": "系统红字：检测到可疑痕迹，建议判定为中国人并拒绝入境。",
+      "question": "组一条带反证的证据链再裁决。只堆表面线索，系统会满意，但你会冤枉人。",
+      "clues": [
+        "ime_candidate",
+        "takeout_note"
+      ],
+      "baits": [
+        "typing",
+        "airfare"
+      ],
+      "baitDrops": {
+        "typing": [
+          "ime_counter"
+        ],
+        "airfare": [
+          "takeout_counter"
+        ]
+      },
+      "followUps": {
+        "ime_candidate": "对方：这是出厂自带的，我也没改过。",
+        "takeout_note": "对方：这在我们那儿很常见。",
+        "ime_counter": "对方：你看，这条就能说明问题吧？"
+      },
+      "truth": {
+        "real": "intl",
+        "correct": "pass",
+        "systemWants": "reject"
+      }
+    }
+  ]
+}

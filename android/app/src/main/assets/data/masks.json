@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "_note": "遮挡卡：模式B中对‘信息模块’的抽象应对。只改数值，不写任何真实规避手法。",
+  "masks": {
+    "vague": { "name": "含糊其辞", "desc": "对这一项只给模糊回答。", "effects": { "disguise": 10, "consistency": -5, "alertness": 5 } },
+    "story": { "name": "编个故事", "desc": "让 Fable 编一段背景把它圆过去。", "effects": { "disguise": 20, "consistency": -10, "alertness": 10 } },
+    "mimic": { "name": "照抄模板", "desc": "照系统喜欢的样子填。", "effects": { "disguise": 25, "consistency": 15, "alertness": 15 } },
+    "blank": { "name": "留白", "desc": "干脆空着。", "effects": { "disguise": 5, "consistency": 5, "alertness": -5 } }
+  }
+}
