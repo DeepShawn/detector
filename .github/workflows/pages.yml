@@ -1,0 +1,36 @@
+name: Pages
+
+on:
+  push:
+    branches: [ccr-a863c521-x7ur59]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate data and run unit tests
+        run: npm test
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp -r index.html css js data _site/
+          touch _site/.nojekyll
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true
