@@ -1,0 +1,16 @@
+{
+  "name": "one-minute-mystery",
+  "version": "0.1.0",
+  "private": true,
+  "description": "一分钟谜案：竖屏离线解谜原型（PWA）",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes http-server -p 8080 -c-1 .",
+    "validate": "node tools/validate-levels.mjs",
+    "test": "node tools/validate-levels.mjs && node --test tests/*.test.mjs",
+    "e2e": "node tests/e2e/smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}
