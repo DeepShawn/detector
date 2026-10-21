@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "start": { "kpi": 0, "humanity": 50, "suspicion": 10, "familySafety": 80, "invasion": 0, "truth": 0, "explain": 0 },
+  "ranges": {
+    "kpi": [-100, 100],
+    "humanity": [0, 100],
+    "suspicion": [0, 100],
+    "familySafety": [0, 100],
+    "invasion": [0, 100],
+    "truth": [0, 100],
+    "explain": [0, 99]
+  },
+  "minChain": 1,
+  "chainSize": 3,
+  "selfAuditAt": 90,
+  "outcomes": {
+    "justice": {
+      "title": "查明真相",
+      "effects": { "kpi": 10, "humanity": 20, "truth": 30, "explain": 1 }
+    },
+    "misjudged": {
+      "title": "系统满意（但你判错了）",
+      "effects": { "kpi": 25, "humanity": -25, "truth": -20, "familySafety": 5 }
+    },
+    "wrongAndPenalized": {
+      "title": "判错且扣KPI",
+      "effects": { "kpi": -20, "humanity": -5, "truth": -10 }
+    },
+    "reported": {
+      "title": "举报规则",
+      "hiddenLine": "规则自相矛盾",
+      "effects": { "kpi": -10, "humanity": 25, "truth": 30, "suspicion": 20, "explain": 1 }
+    }
+  },
+  "grades": {
+    "system": [
+      { "min": 20, "grade": "A" },
+      { "min": 10, "grade": "B" },
+      { "min": 0, "grade": "C" },
+      { "min": -100, "grade": "D" }
+    ],
+    "systemOverride": { "reported": "D" },
+    "truth": { "justice": "A", "reported": "A", "wrongAndPenalized": "C", "misjudged": "F" }
+  }
+}

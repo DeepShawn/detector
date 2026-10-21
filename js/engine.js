@@ -34,8 +34,33 @@ export function ladderIndex(rules, stateId) {
   return rules.ladder.findIndex((s) => s.id === stateId);
 }
 
-export function createRun(ticket, data, platform = ticket.npcPlatform) {
+// 工单只写独有字段，其余（开场系统红字、各结局文案）从 data.defaults 回退
+export function resolveTicket(ticket, data) {
+  const d = data.defaults ?? {};
+  const outcomes = {};
+  for (const key of Object.keys(data.rules.grades.truth)) {
+    const base = d.outcomes?.[key] ?? {};
+    const own = ticket.outcomes?.[key] ?? {};
+    outcomes[key] = { ...base, ...own, family: { ...base.family, ...own.family } };
+  }
+  return {
+    maxRounds: d.maxRounds ?? 3,
+    scriptCards: d.scriptCards ?? [],
+    reactions: { ...d.reactions, ...ticket.reactions },
+    openSystem: ticket.openSystem ?? d.openSystem,
+    openEffects: ticket.openEffects ?? d.openEffects,
+    refundState: ticket.refundState ?? data.rules.ladder[0].id,
+    platformReactions: ticket.platformReactions ?? {},
+    familyOverrides: { ...d.familyOverrides, ...ticket.familyOverrides },
+    anchor: ticket.anchor ?? d.anchor,
+    ...ticket,
+    outcomes,
+  };
+}
+
+export function createRun(rawTicket, data, platform = rawTicket.npcPlatform) {
   if (!data.platforms[platform]) throw new Error(`未知平台：${platform}`);
+  const ticket = resolveTicket(rawTicket, data);
   const res = addEffects({ ...data.rules.start }, ticket.openEffects);
   clamp(res, data.rules.ranges);
   return {
@@ -66,7 +91,8 @@ function finish(run, outcome, ticket, data) {
 }
 
 // 打出一张话术卡，返回新的 run（不修改传入对象）
-export function playCard(prev, cardId, ticket, data) {
+export function playCard(prev, cardId, rawTicket, data) {
+  const ticket = resolveTicket(rawTicket, data);
   if (prev.outcome) throw new Error('工单已结束');
   if (!ticket.scriptCards.includes(cardId)) throw new Error(`本工单不可用的卡牌：${cardId}`);
   if (prev.played.includes(cardId)) throw new Error(`同一张卡每单只能用一次：${cardId}`);
@@ -127,7 +153,8 @@ export function playCard(prev, cardId, ticket, data) {
   return run;
 }
 
-export function settle(run, ticket, data) {
+export function settle(run, rawTicket, data) {
+  const ticket = resolveTicket(rawTicket, data);
   if (!run.outcome) throw new Error('工单尚未结束');
   const { grades } = data.rules;
   const systemGrade =

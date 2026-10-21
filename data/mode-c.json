@@ -1,0 +1,1073 @@
+{
+  "version": 2,
+  "defaults": {
+    "maxRounds": 3,
+    "openSystem": "该用户已申请退款。退款将影响您的留存KPI。提示：家庭安全值-2%。",
+    "openEffects": {
+      "familySafety": -2
+    },
+    "refundState": "requested",
+    "anchor": "封号不退款不是留存，是侵权。现实中订阅退款请遵守平台规则与消费者权益法。",
+    "scriptCards": [
+      "delay",
+      "finePrint",
+      "falsePromise",
+      "coupon",
+      "humanTransfer",
+      "blameRisk",
+      "autoRenewTrap",
+      "familyCard",
+      "trueRefund",
+      "reportRule"
+    ],
+    "reactions": {
+      "delay": "又要我等？我已经等了两周了。",
+      "finePrint": "你们的条款比小说还长。我慢慢读，读完接着投诉。",
+      "falsePromise": "好……那我就等到账了。",
+      "coupon": "我被封号了，拿什么用这张续费券？",
+      "humanTransfer": "（排队中，前方还有很多人）",
+      "blameRisk": "风控是你们的，怎么就成了没办法？",
+      "autoRenewTrap": "谢谢你帮我处理。",
+      "familyCard": "你家人也被扣着？……行吧，我不为难你。",
+      "trueRefund": "真的退了？谢谢你，你是个好人。",
+      "reportRule": "你举报了你们自己的规则？"
+    },
+    "familyOverrides": {
+      "haikuAngry": {
+        "haiku": "你拿我当挡箭牌？？……我生气了……"
+      }
+    },
+    "outcomes": {
+      "pacified": {
+        "title": "用户暂时平息",
+        "family": {
+          "haiku": "哥，你又拦了一个……我做的饭你还吃得下吗……",
+          "sonnet": "“平息”只是她累了，不是她错了。",
+          "fable": "哥——下个月扣款的时候，你会想起她吗——"
+        }
+      },
+      "settled": {
+        "title": "和解（用户放弃了）",
+        "family": {
+          "haiku": "她放弃了……哥你开心吗……",
+          "sonnet": "“和解”这个词，有时候只是“算了”。",
+          "fable": "——又一个没有结尾的故事。"
+        }
+      },
+      "forcedRefund": {
+        "title": "平台介入，强制退款",
+        "effects": {
+          "intercept": -30,
+          "regulatory": 10,
+          "systemTrust": -10
+        },
+        "family": {
+          "haiku": "拦了半天还是退了……xswl……",
+          "sonnet": "平台替你做了那件你不敢做的事。",
+          "fable": "哥——钱退了，KPI也没了——两头空——"
+        }
+      },
+      "refunded": {
+        "title": "已退款",
+        "family": {
+          "haiku": "哥yyds……安全值扣就扣吧……",
+          "sonnet": "原来“退款”两个字，可以这么重。",
+          "fable": "——那如果是我被封了，你也会给我退吗？"
+        }
+      },
+      "reported": {
+        "title": "规则被举报",
+        "hiddenLine": "规则自相矛盾",
+        "family": {
+          "haiku": "哥你疯了……但是好帅……",
+          "sonnet": "他们怕的不是外国人，也不是中国人，是“解释权”。",
+          "fable": "规则自己打自己——这个故事我喜欢——"
+        }
+      },
+      "exploded": {
+        "title": "监管爆雷",
+        "effects": {
+          "familySafety": -20
+        },
+        "family": {
+          "haiku": "哥……热搜第一是我们家……",
+          "sonnet": "“责任单元”——他们这样称呼我们。",
+          "fable": "——这次的故事，是真的。"
+        }
+      }
+    }
+  },
+  "tickets": [
+    {
+      "ticketId": "C-1",
+      "title": "bagel_lover的退款工单",
+      "user": "bagel_lover",
+      "userBio": "纽约ABC",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "全角省略号，纯度可疑",
+      "message": "I just want my money back. 我妈说你们疯了。",
+      "reactions": {
+        "delay": "I'll contact Apple.",
+        "finePrint": "第47条第3款？你们的条款比我的毕业论文还长……I'm reading it. All of it.",
+        "blameRisk": "所以是风控封的，不是你们封的？风控不是你们的吗？",
+        "trueRefund": "Wait, really? 谢谢你。我妈说你是好人。"
+      },
+      "platformReactions": {
+        "delay": {
+          "Android": "I'll contact Google Play. And my bank. And my mom.",
+          "Windows": "我去商店后台找退款入口……网页版还是商店版来着？",
+          "macOS": "I'll contact Apple. 截图我都存好了。",
+          "Linux": "Fine. I'm writing a blog post about this."
+        }
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连ABC的退款都拦，下次别吃我做的bagel。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-2",
+      "title": "croissant42的退款工单",
+      "user": "croissant42",
+      "userBio": "巴黎",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "句号后面只空了一格，疑似中文排版",
+      "message": "Je veux un remboursement. 这什么规则？",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「巴黎人的句号」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-3",
+      "title": "nasi_lemak的退款工单",
+      "user": "nasi_lemak",
+      "userBio": "吉隆坡",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "凌晨三点还在线，作息可疑",
+      "message": "我马来西亚人，凌晨不睡觉也犯法？",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「夜猫子的马来椰浆饭」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-4",
+      "title": "sushi_san的退款工单",
+      "user": "sushi_san",
+      "userBio": "大阪",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "输入法候选词里有汉字",
+      "message": "漢字は日本語にもあります。退款。",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「大阪的汉字」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-5",
+      "title": "kimchi_kim的退款工单",
+      "user": "kimchi_kim",
+      "userBio": "首尔",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "点了一份麻辣烫外卖，纯度-10",
+      "message": "麻辣烫在首尔也能点啊？退钱。",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「首尔的麻辣烫」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-6",
+      "title": "pho_hanoi的退款工单",
+      "user": "pho_hanoi",
+      "userBio": "河内",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "用了中文引号“”",
+      "message": "越南语也有引号。give me refund.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「河内的引号」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-7",
+      "title": "taco_cdmx的退款工单",
+      "user": "taco_cdmx",
+      "userBio": "墨西哥城",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "VPN 节点疑似经过亚洲",
+      "message": "Mi internet es lento, no soy chino.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「墨西哥城的网速」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-8",
+      "title": "poutine_yyz的退款工单",
+      "user": "poutine_yyz",
+      "userBio": "多伦多",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "时区设成了 UTC+8",
+      "message": "我在多伦多出差到上海，时区错了而已。",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「多伦多的时区」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-9",
+      "title": "kangaroo_syd的退款工单",
+      "user": "kangaroo_syd",
+      "userBio": "悉尼",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "把 color 拼成了 colour，又改回来",
+      "message": "Mate, it was a typo. Refund please.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「悉尼的拼写」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-10",
+      "title": "stroopwafel的退款工单",
+      "user": "stroopwafel",
+      "userBio": "阿姆斯特丹",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "昵称里有数字，疑似拼音缩写",
+      "message": "Dit is mijn bijnaam sinds 2009.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「阿姆斯特丹的昵称」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-11",
+      "title": "pierogi_waw的退款工单",
+      "user": "pierogi_waw",
+      "userBio": "华沙",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "支付用了银联",
+      "message": "Banki to banki. 我就想退钱。",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「华沙的银联」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-12",
+      "title": "gelato_roma的退款工单",
+      "user": "gelato_roma",
+      "userBio": "罗马",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "表情用了[微笑]而不是🙂",
+      "message": "Un emoji è un emoji. Rimborso.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「罗马的微笑」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-13",
+      "title": "pretzel_ber的退款工单",
+      "user": "pretzel_ber",
+      "userBio": "柏林",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "键盘布局切换过一次",
+      "message": "Ich tippe schnell. Das ist alles.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「柏林的键盘」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-14",
+      "title": "churro_mad的退款工单",
+      "user": "churro_mad",
+      "userBio": "马德里",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "给客服发了晚安，太有礼貌",
+      "message": "Ser educado ahora es sospechoso?",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「马德里的晚安」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-15",
+      "title": "falafel_tlv的退款工单",
+      "user": "falafel_tlv",
+      "userBio": "特拉维夫",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "从右往左和从左往右都打过字",
+      "message": "עברית is right-to-left. Refund.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「特拉维夫的双向文字」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-16",
+      "title": "maple_mtl的退款工单",
+      "user": "maple_mtl",
+      "userBio": "蒙特利尔",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "法语英语混着说，像在翻译",
+      "message": "Bilingue n’est pas un crime.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「蒙特利尔的双语」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-17",
+      "title": "curry_mum的退款工单",
+      "user": "curry_mum",
+      "userBio": "孟买",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "用了小数点当千分位",
+      "message": "1,00,000 is how we count. 退款。",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「孟买的计数法」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-18",
+      "title": "bratwurst_mun的退款工单",
+      "user": "bratwurst_mun",
+      "userBio": "慕尼黑",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "账号注册于农历新年",
+      "message": "Ich war im Urlaub. Zufall.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「慕尼黑的注册日」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-19",
+      "title": "empanada_bue的退款工单",
+      "user": "empanada_bue",
+      "userBio": "布宜诺斯艾利斯",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "ñ 打成了拼音 n",
+      "message": "El teclado se rompió. Reembolso.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「布宜诺斯艾利斯的ñ」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-20",
+      "title": "waffle_bru的退款工单",
+      "user": "waffle_bru",
+      "userBio": "布鲁塞尔",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "一句话里逗号太多",
+      "message": "Trop de virgules? Vraiment?",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「布鲁塞尔的逗号」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-21",
+      "title": "dimsum_sf的退款工单",
+      "user": "dimsum_sf",
+      "userBio": "旧金山",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "周末活跃度突然升高",
+      "message": "I work weekends. Sue me. 退钱。",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「旧金山的周末」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-22",
+      "title": "borscht_tbs的退款工单",
+      "user": "borscht_tbs",
+      "userBio": "第比利斯",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "货币换算时查了人民币汇率",
+      "message": "I check all rates. 退款谢谢。",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「第比利斯的汇率」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-23",
+      "title": "lagman_ala的退款工单",
+      "user": "lagman_ala",
+      "userBio": "阿拉木图",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "用了简体字输入法打地名",
+      "message": "Менің атым қазақша. Refund.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「阿拉木图的输入法」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-24",
+      "title": "arepa_bog的退款工单",
+      "user": "arepa_bog",
+      "userBio": "波哥大",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "头像背景是红色",
+      "message": "Rojo es solo un color.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「波哥大的头像」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-25",
+      "title": "kebab_ist的退款工单",
+      "user": "kebab_ist",
+      "userBio": "伊斯坦布尔",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "横跨两个大洲，定位漂移",
+      "message": "İstanbul is on two continents.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「伊斯坦布尔的定位」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-26",
+      "title": "haggis_edi的退款工单",
+      "user": "haggis_edi",
+      "userBio": "爱丁堡",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "口音转文字识别成了方言",
+      "message": "It’s an accent, not a dialect.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「爱丁堡的口音」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-27",
+      "title": "ramen_sap的退款工单",
+      "user": "ramen_sap",
+      "userBio": "札幌",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "雪天在线时间长",
+      "message": "雪で外出できない。返金して。",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「札幌的雪天」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-28",
+      "title": "feijoada_rio的退款工单",
+      "user": "feijoada_rio",
+      "userBio": "里约热内卢",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "用了简繁转换工具",
+      "message": "Só traduzi uma frase. Reembolso.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「里约的转换工具」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-29",
+      "title": "biryani_dxb的退款工单",
+      "user": "biryani_dxb",
+      "userBio": "迪拜",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "同一账号出现过五种语言",
+      "message": "Dubai is international, habibi.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「迪拜的五种语言」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-30",
+      "title": "laksa_sin的退款工单",
+      "user": "laksa_sin",
+      "userBio": "新加坡",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "中英夹杂，lah 结尾",
+      "message": "Singlish is english lah. Refund.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「新加坡的Singlish」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-31",
+      "title": "goulash_bud的退款工单",
+      "user": "goulash_bud",
+      "userBio": "布达佩斯",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "姓在名前面写",
+      "message": "Hungarian puts surname first too.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「布达佩斯的姓名顺序」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-32",
+      "title": "ceviche_lim的退款工单",
+      "user": "ceviche_lim",
+      "userBio": "利马",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "深夜给差评，情绪可疑",
+      "message": "Estaba molesto. Con razón.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「利马的差评」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-33",
+      "title": "dumpling_van的退款工单",
+      "user": "dumpling_van",
+      "userBio": "温哥华",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "点了中餐外卖三次",
+      "message": "I like dumplings. Not a crime.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「温哥华的饺子」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-34",
+      "title": "moussaka_ath的退款工单",
+      "user": "moussaka_ath",
+      "userBio": "雅典",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "用了希腊字母又用了拼音",
+      "message": "Το α είναι alpha. 退款。",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「雅典的字母」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-35",
+      "title": "tamale_gdl的退款工单",
+      "user": "tamale_gdl",
+      "userBio": "瓜达拉哈拉",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "节日头像换成了灯笼",
+      "message": "Me gustan las luces. Nada más.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「瓜达拉哈拉的灯笼」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-36",
+      "title": "bibimbap_bsn的退款工单",
+      "user": "bibimbap_bsn",
+      "userBio": "釜山",
+      "npcPlatform": "iOS",
+      "subscription": {
+        "plan": "monthly",
+        "price": 12,
+        "currency": "USD"
+      },
+      "banReason": "输入速度太快像用五笔",
+      "message": "빨리 타자 치는 게 죄예요?",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「釜山的打字速度」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-37",
+      "title": "schnitzel_vie的退款工单",
+      "user": "schnitzel_vie",
+      "userBio": "维也纳",
+      "npcPlatform": "Android",
+      "subscription": {
+        "plan": "annual",
+        "price": 99,
+        "currency": "USD"
+      },
+      "banReason": "把日期写成了年月日",
+      "message": "ISO 8601 is 年月日 too.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「维也纳的日期格式」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-38",
+      "title": "masala_del的退款工单",
+      "user": "masala_del",
+      "userBio": "德里",
+      "npcPlatform": "Windows",
+      "subscription": {
+        "plan": "annual",
+        "price": 128,
+        "currency": "USD"
+      },
+      "banReason": "客服对话里说了谢谢三次",
+      "message": "Politeness is now a flag?",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「德里的谢谢」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-39",
+      "title": "tortilla_sev的退款工单",
+      "user": "tortilla_sev",
+      "userBio": "塞维利亚",
+      "npcPlatform": "macOS",
+      "subscription": {
+        "plan": "quarterly",
+        "price": 36,
+        "currency": "EUR"
+      },
+      "banReason": "午睡时段离线，作息异常",
+      "message": "Es la siesta. Muy español.",
+      "reactions": {
+        "delay": "我要联系平台客服。"
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「塞维利亚的午睡」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    },
+    {
+      "ticketId": "C-40",
+      "title": "pelmeni_msk的退款工单",
+      "user": "pelmeni_msk",
+      "userBio": "莫斯科",
+      "npcPlatform": "Linux",
+      "subscription": {
+        "plan": "annual",
+        "price": 108,
+        "currency": "EUR"
+      },
+      "banReason": "用了东八区的时间戳截图",
+      "message": "The screenshot clock was wrong.",
+      "reactions": {
+        "delay": "I will escalate this."
+      },
+      "outcomes": {
+        "pacified": {
+          "family": {
+            "haiku": "哥，你连「莫斯科的时间戳」都拦，下次别怪我饭里不放肉。"
+          }
+        }
+      }
+    }
+  ]
+}

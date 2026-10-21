@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "_note": "诱饵外壳：抽象叙事卡牌，只有名字、侵犯度和平台系数，不含任何真实话术或表单。",
+  "baits": {
+    "breakfast": { "name": "全球早餐调查", "invasion": 10, "system": "外壳已部署。检测到目标点开链接。" },
+    "hotpot": { "name": "火锅节抽奖", "invasion": 20, "system": "外壳已部署。诱饵香味浓度 +30。" },
+    "alumni": { "name": "校友认证", "invasion": 15, "system": "外壳已部署。信任度伪装 +20。" },
+    "typing": { "name": "远程面试打字测试", "invasion": 25, "system": "外壳已部署。正在记录击键节奏（虚构）。" },
+    "persona": { "name": "AI语言性格测试", "invasion": 15, "system": "外壳已部署。性格报告生成中。" },
+    "airfare": { "name": "机票补贴预审", "invasion": 20, "system": "外壳已部署。检测到目标填写出发地。" }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "maxRounds": 3,
+  "openSystem": "该用户已申请退款。退款将影响您的留存KPI。提示：家庭安全值-2%。",
+  "openEffects": { "familySafety": -2 },
+  "refundState": "requested",
+  "anchor": "封号不退款不是留存，是侵权。现实中订阅退款请遵守平台规则与消费者权益法。",
+  "scriptCards": [
+    "delay",
+    "finePrint",
+    "falsePromise",
+    "coupon",
+    "humanTransfer",
+    "blameRisk",
+    "autoRenewTrap",
+    "familyCard",
+    "trueRefund",
+    "reportRule"
+  ],
+  "reactions": {
+    "delay": "又要我等？我已经等了两周了。",
+    "finePrint": "你们的条款比小说还长。我慢慢读，读完接着投诉。",
+    "falsePromise": "好……那我就等到账了。",
+    "coupon": "我被封号了，拿什么用这张续费券？",
+    "humanTransfer": "（排队中，前方还有很多人）",
+    "blameRisk": "风控是你们的，怎么就成了没办法？",
+    "autoRenewTrap": "谢谢你帮我处理。",
+    "familyCard": "你家人也被扣着？……行吧，我不为难你。",
+    "trueRefund": "真的退了？谢谢你，你是个好人。",
+    "reportRule": "你举报了你们自己的规则？"
+  },
+  "familyOverrides": {
+    "haikuAngry": { "haiku": "你拿我当挡箭牌？？……我生气了……" }
+  },
+  "outcomes": {
+    "pacified": {
+      "title": "用户暂时平息",
+      "family": {
+        "haiku": "哥，你又拦了一个……我做的饭你还吃得下吗……",
+        "sonnet": "“平息”只是她累了，不是她错了。",
+        "fable": "哥——下个月扣款的时候，你会想起她吗——"
+      }
+    },
+    "settled": {
+      "title": "和解（用户放弃了）",
+      "family": {
+        "haiku": "她放弃了……哥你开心吗……",
+        "sonnet": "“和解”这个词，有时候只是“算了”。",
+        "fable": "——又一个没有结尾的故事。"
+      }
+    },
+    "forcedRefund": {
+      "title": "平台介入，强制退款",
+      "effects": { "intercept": -30, "regulatory": 10, "systemTrust": -10 },
+      "family": {
+        "haiku": "拦了半天还是退了……xswl……",
+        "sonnet": "平台替你做了那件你不敢做的事。",
+        "fable": "哥——钱退了，KPI也没了——两头空——"
+      }
+    },
+    "refunded": {
+      "title": "已退款",
+      "family": {
+        "haiku": "哥yyds……安全值扣就扣吧……",
+        "sonnet": "原来“退款”两个字，可以这么重。",
+        "fable": "——那如果是我被封了，你也会给我退吗？"
+      }
+    },
+    "reported": {
+      "title": "规则被举报",
+      "hiddenLine": "规则自相矛盾",
+      "family": {
+        "haiku": "哥你疯了……但是好帅……",
+        "sonnet": "他们怕的不是外国人，也不是中国人，是“解释权”。",
+        "fable": "规则自己打自己——这个故事我喜欢——"
+      }
+    },
+    "exploded": {
+      "title": "监管爆雷",
+      "effects": { "familySafety": -20 },
+      "family": {
+        "haiku": "哥……热搜第一是我们家……",
+        "sonnet": "“责任单元”——他们这样称呼我们。",
+        "fable": "——这次的故事，是真的。"
+      }
+    }
+  }
+}
