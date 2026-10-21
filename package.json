@@ -1,13 +1,13 @@
 {
-  "name": "one-minute-mystery",
+  "name": "huoyan-jinjing",
   "version": "0.1.0",
   "private": true,
-  "description": "一分钟谜案：竖屏离线解谜原型（PWA）",
+  "description": "火眼金睛：模式C（订阅退款拦截战）可玩原型",
   "type": "module",
   "scripts": {
     "start": "npx --yes http-server -p 8080 -c-1 .",
-    "validate": "node tools/validate-levels.mjs",
-    "test": "node tools/validate-levels.mjs && node --test tests/*.test.mjs",
+    "validate": "node tools/validate-data.mjs",
+    "test": "node tools/validate-data.mjs && node --test tests/*.test.mjs",
     "e2e": "node tests/e2e/smoke.mjs"
   },
   "devDependencies": {

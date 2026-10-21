@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "_note": "全部为虚构设备档案，由玩家手动选择，游戏不读取任何真实设备信息。",
+  "platforms": {
+    "iOS": {
+      "refundEntry": "系统级订阅管理，客服只能引导等待",
+      "tip": "“平台审核中”拖延有效；条款迷宫效果打折",
+      "modifiers": { "delay": { "intercept": 5 }, "finePrint": { "intercept": -5 } }
+    },
+    "Android": {
+      "refundEntry": "多渠道订阅，入口分散",
+      "tip": "转人工可“转渠道”拖时间，但投诉值更高",
+      "modifiers": { "humanTransfer": { "intercept": 10, "complaint": 5 } }
+    },
+    "Windows": {
+      "refundEntry": "网页/商店订阅并存",
+      "tip": "条款迷宫效果加成，用户容易迷路",
+      "modifiers": { "finePrint": { "intercept": 10 } }
+    },
+    "macOS": {
+      "refundEntry": "系统订阅入口清晰",
+      "tip": "假承诺容易被截图，监管风险更高",
+      "modifiers": { "falsePromise": { "regulatory": 10 } }
+    },
+    "Linux": {
+      "refundEntry": "网页订阅为主，用户技术敏感",
+      "tip": "甩锅风控容易被识破，投诉值飙升",
+      "modifiers": { "blameRisk": { "intercept": -10, "complaint": 15 } }
+    }
+  }
+}

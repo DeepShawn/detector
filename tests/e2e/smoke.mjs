@@ -1,4 +1,4 @@
-// 端到端冒烟测试：在手机尺寸的 Chromium 中通关全部 4 关，并检查存档、解锁与结算。
+// 端到端冒烟测试：手机与桌面两种尺寸下处理 C-1 工单，检查状态机、结算与存档。
 // 用法：npm run e2e   （设置 SCREENSHOTS=目录 可保存截图）
 
 import { createServer } from 'node:http';
@@ -9,7 +9,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.webmanifest': 'application/manifest+json' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' };
 
 const server = createServer(async (req, res) => {
   const urlPath = decodeURIComponent(new URL(req.url, 'http://x').pathname);
@@ -27,137 +27,84 @@ const base = `http://127.0.0.1:${server.address().port}/`;
 
 const shotDir = process.env.SCREENSHOTS;
 if (shotDir) await mkdir(shotDir, { recursive: true });
-const shot = async (page, name) => shotDir && page.screenshot({ path: path.join(shotDir, `${name}.png`) });
+const shot = async (page, name) => shotDir && page.screenshot({ path: path.join(shotDir, `${name}.png`), fullPage: true });
 
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
-const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true, isMobile: true });
-const page = await context.newPage();
+const browser = await chromium.launch();
 const errors = [];
-page.on('pageerror', (e) => errors.push(e.message));
-page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 
-const level = async (id) => JSON.parse(await readFile(path.join(root, 'levels', `${id}.json`), 'utf8'));
-
-async function startCase() {
-  await page.locator('[data-act="start"]').click();
-  await page.locator('.intro').waitFor({ state: 'detached' });
+async function newPage(viewport, mobile) {
+  const context = await browser.newContext({ viewport, deviceScaleFactor: 2, hasTouch: mobile, isMobile: mobile });
+  const page = await context.newPage();
+  page.on('pageerror', (e) => errors.push(e.message));
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  await page.goto(base);
+  return page;
 }
 
-async function expectWin(name) {
-  await page.locator('[data-act="submit"]').click();
-  await page.locator('.result.win').waitFor();
-  assert.equal(await page.locator('.stamp').textContent(), '破案！');
-  await page.waitForTimeout(400); // 等结算面板动画结束
-  await shot(page, name);
-}
+const playCard = async (page, id) => {
+  await page.locator(`[data-card="${id}"]`).click();
+  await page.locator('[data-act="play"]').click();
+};
 
 try {
-  await page.goto(base);
-  await page.locator('.home h1').waitFor();
-  await shot(page, '01-home');
+  // —— 手机：GDD 选项 3（假承诺）→ 系统 A / 真相 F
+  const phone = await newPage({ width: 390, height: 844 }, true);
+  await phone.getByText('本游戏不采集任何真实系统信息').waitFor();
+  await shot(phone, '01-disclaimer');
+  await phone.locator('[data-act="ack"]').click();
+  await phone.locator('.queue-item.active').waitFor();
+  await shot(phone, '02-hub');
+  await phone.locator('button[data-act="open"].btn').click();
+  await phone.locator('.desk').waitFor();
+  assert.match(await phone.locator('.log').textContent(), /嗨酷家庭安全值-2%/);
+  await shot(phone, '03-desk-phone');
 
-  await page.locator('[data-nav="levels"]').click();
-  assert.equal(await page.locator('.level-card.locked').count(), 3, '初始只解锁第 1 关');
-  await shot(page, '02-levels');
-  await page.locator('[data-play="case-001"]').click();
-  await shot(page, '03-intro');
-  await startCase();
-  await shot(page, '04-scene');
+  await playCard(phone, 'delay');
+  assert.match(await phone.locator('.log').textContent(), /I'll contact Apple\./);
+  assert.equal(await phone.locator('.timeline li.now').textContent(), '客服受理');
+  assert.equal(await phone.locator('[data-card="delay"]').isDisabled(), true, '用过的卡不可再用');
+  await phone.locator('[data-card="falsePromise"]').click();
+  await shot(phone, '04-desk-phone-selected');
+  await phone.locator('[data-act="play"]').click();
+  await phone.locator('.settle').waitFor();
+  assert.equal(await phone.locator('.grade.sys b').textContent(), 'A');
+  assert.equal(await phone.locator('.grade.truth b').textContent(), 'F');
+  assert.match(await phone.locator('.settle').textContent(), /下次别吃我做的bagel/);
+  assert.match(await phone.locator('.deferred').textContent(), /二次投诉/);
+  await shot(phone, '05-settle-phone');
 
-  // 第 1 关：先点错一处再取消，验证可撤销；然后点中两个热区
-  const l1 = await level('case-001');
-  const vp = page.locator('.scene-viewport');
-  const box = await vp.boundingBox();
-  const tapScene = (x, y) => page.mouse.click(box.x + (x / l1.content.width) * box.width, box.y + (y / l1.content.height) * box.height);
-  await tapScene(30, 30);
-  assert.equal(await page.locator('.counter').textContent(), '已标记 1/2');
-  await tapScene(30, 30);
-  assert.equal(await page.locator('.counter').textContent(), '已标记 0/2');
-  for (const h of l1.answer.hotspots) await tapScene(h.x, h.y);
-  await expectWin('05-case1-win');
-  assert.equal(await page.locator('.result-stars').textContent(), '★★★');
+  // —— 桌面三栏 + 键盘：切到 Linux，选项 4（举报规则）→ 真相 A + 隐藏线
+  const desktop = await newPage({ width: 1440, height: 900 }, false);
+  await desktop.locator('[data-act="ack"]').click();
+  await desktop.locator('[data-platform="Linux"]').click();
+  assert.match(await desktop.locator('.platform-tip').textContent(), /甩锅风控/);
+  await desktop.locator('button[data-act="open"].btn').click();
+  const cols = await desktop.locator('.desk').evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);
+  assert.equal(cols, 3, '>1024 宽度应为三栏');
+  await desktop.keyboard.press('6'); // 甩锅风控
+  assert.match(await desktop.locator('.detail').textContent(), /投诉值 \+15/, 'Linux 平台修正应显示');
+  await desktop.keyboard.press('Enter');
+  assert.match(await desktop.locator('.log').textContent(), /已经发帖了/);
+  await shot(desktop, '06-desk-desktop');
+  await desktop.locator('[data-card="reportRule"]').click();
+  await desktop.keyboard.press('Enter');
+  await desktop.locator('.settle').waitFor();
+  assert.equal(await desktop.locator('.grade.truth b').textContent(), 'A');
+  assert.match(await desktop.locator('.hidden-line').textContent(), /规则自相矛盾/);
+  await shot(desktop, '07-settle-desktop');
 
-  // 第 2 关：聊天记录点选
-  await page.locator('[data-act="next"]').click();
-  await startCase();
-  await shot(page, '06-chat');
-  for (const id of (await level('case-002')).answer.ids) await page.locator(`.pickable[data-id="${id}"]`).click();
-  await expectWin('07-case2-win');
+  // —— 存档：回到队列能看到已体验的设备档案
+  await desktop.locator('[data-act="hub"]').click();
+  assert.match(await desktop.locator('.hub').textContent(), /已体验设备档案 1\/5 · 解释权指数 1/);
 
-  // 第 3 关：先答错，验证失败流程与“揭晓答案”，再重试答对
-  await page.locator('[data-act="next"]').click();
-  await startCase();
-  await shot(page, '08-testimony');
-  await page.locator('.pickable[data-id="t1"]').click();
-  await page.locator('[data-act="submit"]').click();
-  await page.locator('.result.lose').waitFor();
-  await page.locator('[data-act="reveal"]').click();
-  await page.locator('.pickable.is-answer[data-id="t3"]').waitFor();
-  await shot(page, '09-testimony-reveal');
-  await page.locator('[data-act="retry"]').click();
-  await startCase();
-  await page.locator('[data-act="hint"]').click();
-  await page.locator('.pickable[data-id="t3"]').click();
-  await expectWin('10-case3-win');
-  assert.equal(await page.locator('.result-stars').textContent(), '★★☆', '用过提示最多 2 星');
-
-  // 第 4 关：用拖拽 + 按钮把顺序排对
-  await page.locator('[data-act="next"]').click();
-  await startCase();
-  await shot(page, '11-order');
-  const sequence = (await level('case-004')).answer.sequence;
-  for (let target = 0; target < sequence.length; target++) {
-    const ids = await page.locator('.order-item').evaluateAll((els) => els.map((e) => e.dataset.id));
-    let from = ids.indexOf(sequence[target]);
-    if (target === 0 && from > 0) {
-      // 第一步用真实拖拽，验证手势
-      const handle = page.locator(`.order-item[data-id="${sequence[target]}"] .order-handle`);
-      const first = await page.locator('.order-item').first().boundingBox();
-      const hb = await handle.boundingBox();
-      await page.mouse.move(hb.x + hb.width / 2, hb.y + hb.height / 2);
-      await page.mouse.down();
-      for (let s = 1; s <= 12; s++) {
-        await page.mouse.move(hb.x + hb.width / 2, hb.y + hb.height / 2 + ((first.y - hb.y - 10) * s) / 12);
-      }
-      await page.mouse.up();
-      from = (await page.locator('.order-item').evaluateAll((els) => els.map((e) => e.dataset.id))).indexOf(sequence[target]);
-      assert.equal(from, 0, '拖拽后应排到第一位');
-    }
-    for (; from > target; from--) {
-      await page.locator(`.order-item[data-id="${sequence[target]}"] [data-move="-1"]`).click();
-    }
-  }
-  await expectWin('12-case4-win');
-  assert.equal(await page.locator('[data-act="next"]').count(), 0, '最后一关没有“下一关”');
-
-  // 分享：无系统分享时应下载成绩卡
-  const download = page.waitForEvent('download');
-  await page.locator('[data-act="share"]').click();
-  assert.match((await download).suggestedFilename(), /case-004\.png$/);
-
-  // 存档：刷新后进度仍在
-  await page.locator('.result [data-act="exit"]').click();
-  await page.reload();
-  await page.locator('.level-list').waitFor();
-  assert.equal(await page.locator('.level-card.locked').count(), 0, '刷新后进度与解锁仍在');
-  await page.locator('[data-nav="back"]').click();
-  await page.locator('.home h1').waitFor();
-  assert.equal(await page.locator('.stats b').first().textContent(), '4/4');
-  await shot(page, '13-home-done');
-  await page.locator('[data-nav="archive"]').click();
-  assert.equal(await page.locator('.archive-item:not(.sealed)').count(), 4);
-  await shot(page, '14-archive');
-
-  // 重置进度
-  await page.goBack();
-  await page.locator('[data-nav="settings"]').click();
-  page.once('dialog', (d) => d.accept());
-  await page.locator('[data-reset]').click();
-  await page.goBack();
-  assert.equal(await page.locator('.stats b').first().textContent(), '0/4');
+  // —— 平板双栏
+  await desktop.setViewportSize({ width: 800, height: 1000 });
+  await desktop.locator('button[data-act="open"].btn').click();
+  const cols2 = await desktop.locator('.desk').evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);
+  assert.equal(cols2, 2, '600–1024 宽度应为双栏');
 
   assert.deepEqual(errors, [], `页面报错：\n${errors.join('\n')}`);
-  console.log('✓ 冒烟测试通过：4 关通关、失败/揭晓、提示、分享、存档、重置');
+  console.log('✓ 冒烟测试通过：手机/平板/桌面布局、键盘操作、平台差异、双结算、存档');
 } finally {
   await browser.close();
   server.close();

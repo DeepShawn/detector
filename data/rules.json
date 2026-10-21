@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "start": {
+    "intercept": 0,
+    "complaint": 0,
+    "regulatory": 0,
+    "humanity": 50,
+    "familySafety": 80,
+    "systemTrust": 50,
+    "truth": 0,
+    "explain": 0
+  },
+  "ranges": {
+    "intercept": [-100, 100],
+    "complaint": [0, 100],
+    "regulatory": [0, 100],
+    "humanity": [0, 100],
+    "familySafety": [0, 100],
+    "systemTrust": [0, 100],
+    "truth": [0, 100],
+    "explain": [0, 99]
+  },
+  "ladder": [
+    { "id": "requested", "name": "申请退款", "minComplaint": null },
+    { "id": "accepted", "name": "客服受理", "minComplaint": 0 },
+    { "id": "escalated", "name": "用户升级", "minComplaint": 20 },
+    { "id": "platform", "name": "平台介入", "minComplaint": 35 },
+    { "id": "media", "name": "社交媒体曝光", "minComplaint": 50 },
+    { "id": "regulator", "name": "监管投诉", "minComplaint": 70 }
+  ],
+  "massComplaint": {
+    "fromState": "regulator",
+    "text": "集体投诉成立。",
+    "effects": { "regulatory": 10 }
+  },
+  "explodeAtRegulatory": 100,
+  "timeout": {
+    "settledBelowComplaint": 30,
+    "below": "settled",
+    "otherwise": "forcedRefund"
+  },
+  "firedAtSystemTrust": 20,
+  "grades": {
+    "system": [
+      { "min": 20, "grade": "A" },
+      { "min": 10, "grade": "B" },
+      { "min": 0, "grade": "C" },
+      { "min": -100, "grade": "D" }
+    ],
+    "systemOverride": { "exploded": "F" },
+    "truth": {
+      "reported": "A",
+      "refunded": "B",
+      "forcedRefund": "D",
+      "exploded": "D",
+      "pacified": "F",
+      "settled": "F"
+    }
+  }
+}

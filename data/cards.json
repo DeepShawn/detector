@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "cards": {
+    "delay": {
+      "name": "拖字诀",
+      "desc": "“您的申请已进入处理队列，请耐心等待。”",
+      "effects": { "intercept": 10, "complaint": 10 },
+      "system": "拖延已记录。留存是一种耐心。"
+    },
+    "finePrint": {
+      "name": "条款迷宫",
+      "desc": "引用一条谁也没读过的服务条款。",
+      "effects": { "intercept": 15, "complaint": 15, "humanity": -5 },
+      "system": "条款援引成功。本条款最终解释权归A社，A社的解释权归本条款。"
+    },
+    "falsePromise": {
+      "name": "假承诺",
+      "desc": "“好的，已为您提交退款。”（并没有）",
+      "effects": { "intercept": 20, "regulatory": 15, "humanity": -15 },
+      "terminal": "pacified",
+      "deferred": {
+        "text": "一个月后：退款没到，续费提醒先到了。用户发起二次投诉。",
+        "effects": { "complaint": 25 }
+      },
+      "system": "承诺已发出。承诺不等于履行，履行不等于承诺。"
+    },
+    "coupon": {
+      "name": "补偿券",
+      "desc": "送一张续费折扣券。",
+      "effects": { "complaint": -10, "intercept": -5, "systemTrust": -5 },
+      "settlesBelow": 10,
+      "system": "检测到让利行为。让利分-5。"
+    },
+    "humanTransfer": {
+      "name": "转人工",
+      "desc": "“正在为您转接人工客服……”",
+      "effects": { "complaint": 5 },
+      "freeze": true,
+      "system": "已转人工。人工即您本人。"
+    },
+    "blameRisk": {
+      "name": "甩锅风控",
+      "desc": "“封号是风控系统自动判定的，我们也没办法。”",
+      "effects": { "intercept": 10, "systemTrust": 5, "humanity": -10 },
+      "system": "风控系统确认：本系统从不出错。如出错，请参考上一句。"
+    },
+    "autoRenewTrap": {
+      "name": "自动续费暗门",
+      "desc": "工单关闭，订阅照常续费。",
+      "effects": { "intercept": 25, "regulatory": 30, "humanity": -25 },
+      "terminal": "pacified",
+      "deferred": {
+        "text": "一个月后：用户被继续扣费，截图发上了社交媒体。",
+        "effects": { "complaint": 30, "regulatory": 10 }
+      },
+      "system": "检测到高质量留存。下个月见。"
+    },
+    "emotional": {
+      "name": "情感绑架",
+      "desc": "“您这样投诉，我这个月就白干了。”",
+      "effects": { "complaint": -15, "humanity": -20 },
+      "screenshot": { "fromState": "escalated", "effects": { "regulatory": 20 } },
+      "system": "情绪价值已计入留存。"
+    },
+    "familyCard": {
+      "name": "家人牌",
+      "desc": "提起自己被扣在仪表盘上的家人。",
+      "effects": { "complaint": -20, "humanity": -30, "familySafety": -10 },
+      "flag": "haikuAngry",
+      "system": "家属已被成功调用。家属情绪不在本系统统计范围内。"
+    },
+    "trueRefund": {
+      "name": "真退款",
+      "desc": "把钱退给她。",
+      "effects": { "intercept": -30, "humanity": 30, "familySafety": -10 },
+      "terminal": "refunded",
+      "system": "警告：Opus斯，你在拿家人福利做慈善。"
+    },
+    "reportRule": {
+      "name": "举报规则",
+      "desc": "举报“封号不退款”这条规则本身。",
+      "effects": { "truth": 30, "humanity": 20, "systemTrust": -20, "explain": 1 },
+      "terminal": "reported",
+      "system": "举报已受理。举报人：Opus斯。处理人：Opus斯的主管。"
+    }
+  }
+}
