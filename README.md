@@ -16,6 +16,7 @@ npm install && npm run e2e   # 端到端冒烟测试（Playwright，手机尺寸
 
 > 浏览器开发者工具切到手机模式体验最佳。注意：Service Worker 采用缓存优先，修改资源后请在开发者工具中勾选 “Update on reload” 或提升 `sw.js` 中的 `CACHE` 版本号。
 
+
 ## 关卡
 
 | # | 关卡 | 类型 | 玩法 |
